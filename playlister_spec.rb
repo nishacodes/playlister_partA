@@ -28,7 +28,8 @@ describe "playlister" do
   it 'The Artist class can keep track of artists as they are created' do
     Artist.reset_artists
     artist = Artist.new
-    Artist.all.should include(artist)
+    Artist.all.should include(
+      artist)
   end
 
   it 'The Artist class can count how many artists have been created' do
