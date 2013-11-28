@@ -12,6 +12,10 @@ class Genre
 		@@all << self
 	end
 
+	def artists
+		songs.collect{|song| song.artist}.uniq
+	end
+
 	def self.all
 		@@all
 	end
