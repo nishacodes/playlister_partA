@@ -1,6 +1,3 @@
-# require "song.rb"
-# require "artist.rb"
-
 class Genre
 	attr_accessor :name, :songs, :artists
 
@@ -9,16 +6,21 @@ class Genre
 		@name
 		@songs = []
 		@artists = []
-		@@all << self
+		@@all << self if @@all.include?(self) == false
 	end
 
 	def artists
 		songs.collect{|song| song.artist}.uniq
 	end
 
+	# CLASS METHODS
 	def self.all
 		@@all
 	end
+
+	 def self.count
+  	@@all.count
+  end
 
 	def self.reset_genres
 		@@all.clear

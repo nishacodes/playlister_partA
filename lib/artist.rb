@@ -13,20 +13,23 @@ class Artist
 		@@all << self
 	end
 
+  # add a Song object to the songs array 
+  # set the artist of that song to this artist 
   def add_song(song)
   	songs << song
-    # song.genre.artists << self
     song.artist = self
+    # song.genre.artists << self
   end
   
+  # count the songs in the array
   def songs_count
     songs.count
   end
 
+  # for every song in the array, get the genre from the Song class, genre method
   def genres
-    songs.collect do |song|
-      song.genre
-    end
+    songs.collect {|song| song.genre}.uniq
+
   end
 
   # CLASS METHODS
