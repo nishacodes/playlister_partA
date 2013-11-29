@@ -143,7 +143,7 @@ describe "playlister" do
 
   it 'A song can have a genre' do
     song = Song.new
-    genre = Genre.new 
+    genre = Genre.new.tap{|g| g.name = 'rap'} 
     song.genre = genre
     song.genre.should eq(genre)
   end
